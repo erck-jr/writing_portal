@@ -1,58 +1,91 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Writing Portal - Minimalist Content Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Writing Portal adalah platform blog dan manajemen konten yang dirancang dengan estetika minimalis, performa tinggi, dan pengalaman pengguna yang premium. Dibangun menggunakan Laravel, Tailwind CSS, dan Alpine.js.
 
-## About Laravel
+## ✨ Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Premium UI/UX**: Desain modern dengan skema warna yang dikurasi, tipografi elegan (Outfit), dan mikro-animasi.
+- **Dark Mode Dinamis**: Dukungan mode gelap/terang otomatis yang dapat diubah kapan saja.
+- **Sistem Artikel Utama (Featured Posts)**: Tandai artikel terbaik Anda untuk ditampilkan di carousel beranda dan halaman khusus artikel utama.
+- **Manajemen Web Terpusat**: Kelola logo (teks atau gambar), branding, media sosial, dan footer langsung dari panel admin.
+- **Favicon Pintar**: Sistem otomatis yang menghasilkan favicon dari karakter pertama teks logo atau menggunakan gambar yang diunggah.
+- **Jodit WYSIWYG Editor**: Editor konten yang user-friendly dengan dukungan tema gelap otomatis.
+- **Navigasi Dinamis**: Menu kategori yang dibuat secara otomatis berdasarkan data kategori di database.
+- **Lokalisasi Penuh**: Seluruh antarmuka dan pesan sistem dalam Bahasa Indonesia.
+- **SEO Ready**: Struktur judul dinamis dan metadata untuk setiap halaman.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Teknologi yang Digunakan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend**: [Laravel 11](https://laravel.com)
+- **Frontend**: [Tailwind CSS](https://tailwindcss.com), [Alpine.js](https://alpinejs.dev)
+- **Editor**: [Jodit Editor](https://xdsoft.net/jodit/)
+- **Icons**: [Material Icons](https://fonts.google.com/icons)
+- **Fonts**: [Google Fonts (Outfit)](https://fonts.google.com/specimen/Outfit)
 
-## Learning Laravel
+## 🛠️ Instalasi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Ikuti langkah-langkah berikut untuk menjalankan project di lingkungan lokal:
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **Clone Repositori**
+   ```bash
+   git clone https://github.com/username/writing_portal.git
+   cd writing_portal
+   ```
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+2. **Instal Dependensi**
+   ```bash
+   composer install
+   npm install
+   ```
 
-## Agentic Development
+3. **Konfigurasi Environment**
+   Salin file `.env.example` menjadi `.env` dan sesuaikan konfigurasi database Anda.
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+4. **Migrasi Database & Seeder**
+   ```bash
+   php artisan migrate --seed
+   ```
+
+5. **Symlink Storage**
+   ```bash
+   php artisan storage:link
+   ```
+
+6. **Build Aset & Jalankan Server**
+   ```bash
+   npm run build
+   php artisan serve
+   ```
+
+## ⚙️ Persiapan Produksi
+
+Untuk menjalankan aplikasi di lingkungan production, pastikan Anda melakukan optimasi berikut:
 
 ```bash
-composer require laravel/boost --dev
+# Optimasi Konfigurasi & Route
+php artisan optimize
 
-php artisan boost:install
+# Build Aset untuk Produksi
+npm run build
+
+# Pastikan Debug dimatikan di .env
+APP_DEBUG=false
+APP_ENV=production
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## 📸 Dokumentasi & Pengaturan
 
-## Contributing
+### Pengaturan Logo
+Anda dapat mengatur logo melalui menu **Pengaturan Web** di Panel Admin:
+- **Tipe Teks**: Masukkan teks logo (misal: "WP"). Sistem akan mengambil huruf "W" sebagai favicon.
+- **Tipe Gambar**: Unggah file PNG. Gambar ini akan digunakan sebagai logo navbar dan favicon.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Panel Admin
+Akses panel admin melalui URL `/admin`. Gunakan akun admin yang telah dibuat melalui seeder.
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+Dibuat dengan ❤️ oleh [Hendrik Samkay] (https://github.com/erck-jr)
